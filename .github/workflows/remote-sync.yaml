@@ -1,4 +1,4 @@
-name: Sync Repository
+name: Sync to Remote
 run-name: Sync Repository at commit ${{ github.ref }}
 on:
   push:
