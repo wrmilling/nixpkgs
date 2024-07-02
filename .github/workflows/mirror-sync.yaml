@@ -18,3 +18,16 @@ jobs:
         source_branch: "master"
         destination_branch: "master"
         github_token: ${{ secrets.GITHUB_TOKEN }}
+  stable-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+    - name: repo-sync
+      uses: repo-sync/github-sync@v2
+      with:
+        source_repo: "https://github.com/nixos/nixpkgs.git"
+        source_branch: "release-24.05"
+        destination_branch: "release-24.05"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
