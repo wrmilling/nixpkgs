@@ -10,20 +10,20 @@
 }:
 stdenv.mkDerivation rec {
   pname = "armcord";
-  version = "3.2.8";
+  version = "3.3.0";
 
   src = fetchFromGitHub {
     owner = "ArmCord";
     repo = "ArmCord";
     rev = "v${version}";
-    hash = "sha256-H/Y3xA7gE24UsUkrxmrRFSvs16qZCVxli9vdnt7ihi8=";
+    hash = "sha256-nVirmGgR5yssMRXFUialMjTTSEa5nVNtue207eYUJCg=";
   };
 
   nativeBuildInputs = [ pnpm.configHook nodejs makeWrapper copyDesktopItems ];
 
   pnpmDeps = pnpm.fetchDeps {
     inherit pname version src;
-    hash = "sha256-hYp1XbWQL5NbIzzUSnZ7y7V+vYQmymRNo+EiSjn5d9E=";
+    hash = "sha256-ETnTWErdOIdcyK/v42bx+dFPPt+Lc0Lxyzo+RpxvEjU=";
   };
 
   ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
