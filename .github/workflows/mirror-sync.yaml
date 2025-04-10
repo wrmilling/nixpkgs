@@ -31,3 +31,17 @@ jobs:
         source_branch: "release-24.11"
         destination_branch: "release-24.11"
         github_token: ${{ secrets.GITHUB_TOKEN }}
+  nixos-unstable-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+    - name: repo-sync
+      uses: repo-sync/github-sync@v2
+      with:
+        source_repo: "https://github.com/nixos/nixpkgs.git"
+        source_branch: "nixos-unstable"
+        destination_branch: "nixos-unstable"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
