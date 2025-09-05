@@ -29,7 +29,7 @@ jobs:
       with:
         source_repo: "https://github.com/nixos/nixpkgs.git"
         source_branch: "release-24.11"
-        destination_branch: "release-24.11"
+        destination_branch: "release-25.05"
         github_token: ${{ secrets.GITHUB_TOKEN }}
   nixos-unstable-sync:
     runs-on: ubuntu-latest
